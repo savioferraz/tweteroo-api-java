@@ -5,8 +5,8 @@ import jakarta.validation.constraints.Size;
 
 public record TweetDTO(
 
-        @NotBlank int personId,
+                @NotBlank PersonDTO person,
 
-        @NotBlank @Size(max = 300) String tweet) {
+                @NotBlank @Size(max = 300) String tweet) {
 
 }

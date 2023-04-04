@@ -14,8 +14,8 @@ public class PersonsService {
     private PersonsRepository repository;
 
     public void createPerson(Person data) {
-        if (!verifyEmail(data.getEmail())) {
-            System.out.println("Email already exist");
+        if (!verifyUserName(data.getUsername())) {
+            System.err.println("Username already exist");
         }
 
         repository.save(data);
@@ -27,15 +27,13 @@ public class PersonsService {
 
     public void updatePersonData(int id, PersonDTO data) {
         repository.findById(id).map(person -> {
-            person.setEmail(data.email());
-            person.setName(data.name());
+            person.setUsername(data.username());
             person.setAvatar(data.avatar());
-            person.setPassword(data.password());
             return repository.save(person);
         });
     }
 
-    private boolean verifyEmail(String email) {
-        return repository.findByEmail(email) != null;
+    private boolean verifyUserName(String username) {
+        return repository.findByUserName(username) != null;
     }
 }
