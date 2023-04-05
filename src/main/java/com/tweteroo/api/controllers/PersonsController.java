@@ -21,7 +21,7 @@ public class PersonsController {
     @Autowired
     private PersonsService service;
 
-    @PostMapping("/sing-up")
+    @PostMapping("/sign-up")
     @ResponseStatus(value = HttpStatus.CREATED)
     public void createPerson(@RequestBody @Valid PersonDTO req) {
         service.createPerson(new Person(req));

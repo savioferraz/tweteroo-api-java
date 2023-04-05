@@ -7,5 +7,5 @@ import com.tweteroo.api.models.Person;
 
 @Repository
 public interface PersonsRepository extends JpaRepository<Person, Integer> {
-    Person findByUserName(String username);
+    Person findByUsername(String username);
 }

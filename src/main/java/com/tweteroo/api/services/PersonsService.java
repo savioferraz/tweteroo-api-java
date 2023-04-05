@@ -14,7 +14,7 @@ public class PersonsService {
     private PersonsRepository repository;
 
     public void createPerson(Person data) {
-        if (!verifyUserName(data.getUsername())) {
+        if (verifyUserName(data.getUsername())) {
             System.err.println("Username already exist");
         }
 
@@ -34,6 +34,6 @@ public class PersonsService {
     }
 
     private boolean verifyUserName(String username) {
-        return repository.findByUserName(username) != null;
+        return repository.findByUsername(username) != null;
     }
 }
