@@ -37,9 +37,15 @@ public class TweetsController {
         return services.getAllTweets();
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/user/{username}")
     @ResponseStatus(value = HttpStatus.OK)
     public List<Tweet> getUserTweets(@PathVariable String username) {
         return services.getUserTweets(username);
+    }
+
+    @GetMapping("/page/{page}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<Tweet> getTweetByPage(@PathVariable int page) {
+        return services.getTweetsByPage(page);
     }
 }

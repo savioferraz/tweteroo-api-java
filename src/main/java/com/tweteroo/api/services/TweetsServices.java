@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.tweteroo.api.DTO.TweetDTO;
@@ -49,5 +52,11 @@ public class TweetsServices {
             }
         }
         return userTweets;
+    }
+
+    public List<Tweet> getTweetsByPage(int page) {
+        PageRequest pageRequest = PageRequest.of(page - 1, 10, Sort.by("id").descending());
+        Page<Tweet> tweetPage = tweetsRepository.findAll(pageRequest);
+        return tweetPage.getContent();
     }
 }
