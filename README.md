@@ -25,8 +25,8 @@ You can use a tool like Thunderclient to test the API endpoints. The base URL fo
 |Method |	Endpoint |	Description |
 |-------|----------|--------------|
 |POST	| /tweet |	Create a new Tweet |
-| GET	| /tweets |	Get all tweets |
-| GET	| /tweets/:username	| Get all tweets for a specific user|
+| GET	| /tweets/?page |	Get last 10 tweets on their respective page |
+| GET	| /tweets/user:username	| Get all tweets for a specific user|
 
 ## Technologies Used
 - Java
