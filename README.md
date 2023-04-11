@@ -32,6 +32,7 @@ You can use a tool like Thunderclient to test the API endpoints. The base URL fo
 - Java
 - Spring Boot
 - Maven
+- PostgreSQL
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
